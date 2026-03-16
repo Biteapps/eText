@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+    <!-- Статус-бар -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1a1a1a"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvFileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="untitled.txt"
+            android:textColor="#ff8800"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/tvWordCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 слов"
+            android:textColor="#aaaaaa"
+            android:textSize="12sp"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#333333"/>
+
+    <!-- Панель форматирования -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#222222"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btnBold"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:text="B"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:background="@drawable/btn_gingerbread_small"/>
+
+            <Button
+                android:id="@+id/btnItalic"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:text="I"
+                android:textStyle="italic"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:background="@drawable/btn_gingerbread_small"/>
+
+            <Button
+                android:id="@+id/btnSizePlus"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:text="A+"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:background="@drawable/btn_gingerbread_small"/>
+
+            <Button
+                android:id="@+id/btnSizeMinus"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:text="A-"
+                android:textColor="#000000"
+                android:textSize="10sp"
+                android:background="@drawable/btn_gingerbread_small"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#444444"
+                android:layout_marginHorizontal="8dp"/>
+
+            <Button
+                android:id="@+id/btnCalc"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="КАЛЬК"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/btn_gingerbread_small"/>
+
+            <Button
+                android:id="@+id/btnBase64"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:text="BASE64"
+                android:textColor="#000000"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/btn_gingerbread_small"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#333333"/>
+
+    <!-- Поле редактора -->
+    <EditText
+        android:id="@+id/etEditor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#000000"
+        android:gravity="top|start"
+        android:hint="Начните вводить текст..."
+        android:textColor="#ffffff"
+        android:textColorHint="#444444"
+        android:textSize="16sp"
+        android:typeface="monospace"
+        android:padding="12dp"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:imeOptions="flagNoExtractUi"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#333333"/>
+
+    <!-- Основная панель инструментов -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1a1a1a"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnNew"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginRight="4dp"
+                android:text="НОВЫЙ"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:background="@drawable/btn_gingerbread"/>
+
+            <Button
+                android:id="@+id/btnOpen"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:text="ОТКРЫТЬ"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:background="@drawable/btn_gingerbread"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="4dp"
+                android:text="СОХРАНИТЬ"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:background="@drawable/btn_gingerbread"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btnUndo"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginRight="4dp"
+                android:text="←"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="@drawable/btn_gingerbread_small"/>
+
+            <Button
+                android:id="@+id/btnCut"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:text="ВЫРЕЗ"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:background="@drawable/btn_gingerbread_small"/>
+
+            <Button
+                android:id="@+id/btnCopy"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:text="КОПИЯ"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:background="@drawable/btn_gingerbread_small"/>
+
+            <Button
+                android:id="@+id/btnPaste"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="4dp"
+                android:text="ВСТАВ"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:background="@drawable/btn_gingerbread_small"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Статусная строка -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#000000"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Готово"
+            android:textColor="#99cc00"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tvCursorPos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Стр: 1, Стлб: 1"
+            android:textColor="#aaaaaa"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+</LinearLayout>
